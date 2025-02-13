@@ -19,16 +19,16 @@ const Popup = () => {
   const specialQuestions = {
     "mel": "Good night, sweet dreams...",
     "beatrice": "Ummm word up ig?",
-    "lily": "What flower represents you?",
-    "portia": "What’s my favorite inside joke?",
+    "lily": "Word to proceed?",
+    "portia": "Anomalous?",
     "colby": "mmmmmmmmm?",
     "may": "Why'd you pick that word tho? 😂",
   };
 
   const specialAnswers = {
     "mel": ["and all things attached", "all things attached"],
-    "beatrice": ["bea"],
-    "lily": ["lily", "flower"],
+    "beatrice": ["bea bea"],
+    "lily": ["good"],
     "portia": ["call me"],
     "colby": ["moon"],
     "may": ["tournedos"],
@@ -65,18 +65,18 @@ const Popup = () => {
   };
 
   return (
-    <div className="div flex items-center justify-center h-screen text-xl sm:text-4xl md:text-4xl lg:text-4xl p-4">
+    <div className="flex items-center justify-center h-screen w-screen text-xl p-4">
       {step < 5 && (
         <motion.div 
           initial={{ scale: 0 }} 
           animate={{ scale: 1, transition: { type: 'spring', stiffness: 200 } }}
           exit={{ scale: 0 }}
-          className="romantic-glass-container p-6 sm:p-8 md:p-10 lg:p-12 text-center w-full max-w-md"
+          className="romantic-glass-container p-6 text-center w-full max-w-md"
         >
           {step === 1 && (
             <>
-              <p className="text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold">Are you Mel?</p>
-              <div className="mt-6 flex justify-center gap-4 sm:gap-6">
+              <p className="text-4xl font-bold">Are you Mel?</p>
+              <div className="mt-6 flex justify-center gap-4">
                 <button onClick={handleYes} className="romantic-button">Yes</button>
                 <button onClick={handleNo} className="romantic-button">No</button>
               </div>
@@ -115,9 +115,9 @@ const Popup = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.5 }} 
           animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
-          className="romantic-glass-container p-6 sm:p-8 md:p-10 lg:p-12  w-full max-w-md"
+          className="romantic-glass-container p-6 w-full max-w-md text-center"
         >
-          <p className="text-4xl sm:text-4xl md:text-3xl lg:text-4xl font-bold">{message}</p>
+          <p className="text-3xl font-bold">{message}</p>
         </motion.div>
       )}
     </div>

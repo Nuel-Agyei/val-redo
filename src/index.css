@@ -3,37 +3,40 @@
 
 body {
   background-image: url(./assets/valbg.png);
-  background: linear-gradient(to bottom, #ffb6c1, #f66099);
+  background: no-repeat linear-gradient(to bottom, #ffb6c1, #f66099);
   font-family: 'Caveat', cursive;
   font-size: 36px; /* Increase base text size */
   overflow: hidden;
-  color:aliceblue;
-}
-
-.sub {
-  @apply text-white bg-transparent border-2 border-white hover:scale-120 transition hover:ml-4 duration-700 ease-in-out;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .div {
   background: linear-gradient(to bottom, #ffb6c1, #f66099);
+  min-height: 100vh;
 }
 
 /* Frosted glass effect container */
-.glass-container {
+.romantic-glass-container {
   background: rgba(255, 255, 255, 0.2); 
-  backdrop-filter: blur(12px); 
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
 }
 
 /* Container for the input */
 .romantic-input-container {
-  max-width: 400px;
-  margin: 0 auto;
   padding: 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
 /* Label styling */
@@ -42,8 +45,8 @@ body {
   font-size: 40px; /* Increased font size */
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  @apply text-4xl;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #fff;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -53,7 +56,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
 }
 
@@ -66,11 +69,13 @@ body {
   color: #f2f0f5;
   background-color: rgba(255, 255, 255, 0.4);
   border: 2px solid #ffccd5;
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 /* Input focus effect */
@@ -97,22 +102,24 @@ body {
   color: white;
   font-family: 'Caveat', cursive;
   font-size: 36px; /* Increased font size */
-  padding: 14px 28px;
+  padding: 14px 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(255, 140, 171, 0.2);
   position: relative;
   overflow: hidden;
+  margin-top: 20px;
+  width: 100%;
 }
 
 /* Hover effect */
 .romantic-button:hover {
   background-color: #ff6b8b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(255, 140, 171, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(255, 140, 171, 0.3);
 }
 
 /* Active (click) effect */
@@ -145,4 +152,29 @@ body {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   transition: transform 0s, opacity 0s;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 28px;
+  }
+  
+  .romantic-glass-container {
+    padding: 30px 15px;
+  }
+
+  .romantic-label {
+    font-size: 32px;
+  }
+
+  .romantic-input {
+    font-size: 28px;
+    padding: 12px;
+  }
+
+  .romantic-button {
+    font-size: 28px;
+    padding: 12px 24px;
+  }
 }
